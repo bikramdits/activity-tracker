@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* You can add global styles to this file, and also import other style files */
+.inputWapper {
+  width: 100%;
+}
+
+.custom-drawer {
+  .MuiDrawer-paper {
+    width: 50%;
+  }
+}
+
+.custom-input {
+  .MuiInputLabel-formControl {
+    &[data-shrink='false'] {
+      transform: translate(14px, 11px) scale(1);
+    }
+  }
+  .MuiInputBase-formControl {
+    .MuiInputBase-input {
+      padding-top: 10.5px;
+      padding-bottom: 10.5px;
+    }
+  }
+}
+
+.custom-input .MuiAutocomplete-option {
+  text-align: left;
+}
+
+.custom-multiple-select {
+  width: 190px;
+}
+
+
+.bg-color {
+  background-color: #f9f9f9;
+}
+.custom-blue {
+  color: #3c59d4;
+}
+
+.css-1qet4kz-MuiTableCell-root {
+  border-bottom: 0px !important;
+}
+
+.css-1ygcj2i-MuiTableCell-root {
+  border-bottom: 0px !important;
+}
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  color: gray !important;
+}
+
+.custom-input {
+  position: relative;
+  margin-bottom: 1.5em;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.875em;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transform: translateY(4px);
+}
+
+.w-full {
+  width: 100%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.input-row {
+  display: flex;
+  gap: 20px;
+}
+
+
+

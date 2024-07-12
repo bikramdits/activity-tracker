@@ -1,0 +1,36 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@appname/assets": ["libs/shared/assets/src/index.ts"],
+      "@appname/components": ["libs/shared/components/src/lib/table/index.ts"],
+      "@appname/login-module": ["libs/login-module/src/index.ts"],
+      "@appname/service": ["libs/service/src/index.ts"],
+      "@appname/services": ["libs/services/src/index.ts"],
+      "@appname/ui": ["libs/shared/ui/src/lib/form-elements/index.ts"],
+      "@appname/utils": ["libs/utils/src/index.ts"],
+      "activity/Module": ["apps/activity/src/remote-entry.ts"],
+      "approval/Module": ["apps/approval/src/remote-entry.ts"],
+      "organization/Module": ["apps/organization/src/remote-entry.ts"],
+      "policies/Module": ["apps/policies/src/remote-entry.ts"],
+      "reports/Module": ["apps/reports/src/remote-entry.ts"],
+      "roles/Module": ["apps/roles/src/remote-entry.ts"],
+      "settings/Module": ["apps/settings/src/remote-entry.ts"],
+      "timesheet/Module": ["apps/timesheet/src/remote-entry.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

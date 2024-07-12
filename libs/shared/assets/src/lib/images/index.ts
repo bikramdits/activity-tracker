@@ -1,0 +1,17 @@
+export { default as NeolyticsLogo } from './logo.png';
+export { default as Lock } from './lock.png';
+export { default as Screenshot1 } from './Screenshot1.png';
+export { default as Screenshot2 } from './Screenshot2.png';
+export { default as Screenshot3 } from './Screenshot3.png';
+export { default as Screenshot4 } from './Screenshot4.png';
+export { default as Screenshot5 } from './Screenshot5.png';
+export { default as Screenshot6 } from './Screenshot6.png';
+export { default as facebook } from './facebook.png';
+export { default as google } from './google.png';
+export { default as lock } from './lock.png';
+export { default as logo } from './logo.png';
+export { default as login } from './login.png';
+export { default as person1 } from './p1.jpeg';
+export { default as person2 } from './p2.png';
+export { default as user} from './user.png';
+export { default as deleteImg} from './delete.png';

@@ -1,0 +1,84 @@
+{
+  "name": "approval",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/approval/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/approval",
+        "index": "apps/approval/src/index.html",
+        "baseHref": "/",
+        "main": "apps/approval/src/main.ts",
+        "tsConfig": "apps/approval/tsconfig.app.json",
+        "assets": ["apps/approval/src/favicon.ico", "apps/approval/src/assets"],
+        "styles": ["apps/approval/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "apps/approval/webpack.config.ts"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/approval/src/environments/environment.ts",
+              "with": "apps/approval/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "webpackConfig": "apps/approval/webpack.config.prod.ts"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/react:module-federation-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "approval:build",
+        "hmr": false,
+        "port": 4207
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "approval:build:development"
+        },
+        "production": {
+          "buildTarget": "approval:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "approval:build",
+        "watch": false,
+        "port": 4207
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "approval:build:development"
+        },
+        "production": {
+          "buildTarget": "approval:build:production"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "name": "activity",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/activity/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/activity",
+        "index": "apps/activity/src/index.html",
+        "baseHref": "/",
+        "main": "apps/activity/src/main.ts",
+        "tsConfig": "apps/activity/tsconfig.app.json",
+        "assets": ["apps/activity/src/favicon.ico", "apps/activity/src/assets"],
+        "styles": ["apps/activity/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "apps/activity/webpack.config.ts",
+        "postcssConfig": "apps/activity/postcss.config.js"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/activity/src/environments/environment.ts",
+              "with": "apps/activity/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "webpackConfig": "apps/activity/webpack.config.prod.ts"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/react:module-federation-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "activity:build",
+        "hmr": false,
+        "port": 4204
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "activity:build:development"
+        },
+        "production": {
+          "buildTarget": "activity:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "activity:build",
+        "watch": false,
+        "port": 4204
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "activity:build:development"
+        },
+        "production": {
+          "buildTarget": "activity:build:production"
+        }
+      }
+    }
+  }
+}

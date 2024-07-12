@@ -1,0 +1,140 @@
+// @import "~@fortawesome/fontawesome-free/css/all.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.list-item {
+  // background-color: transparent;
+  box-shadow: none !important;
+  font-weight: 300;
+  text-decoration: none;
+  color: #000;
+}
+
+.sidebar-list-item {
+  padding: 10px 0 !important;
+}
+
+.list-item {
+  padding: 0px 20px 0px 20px !important;
+  background-color: transparent !important;
+}
+
+.list-item:hover {
+  background-color: transparent !important;
+}
+
+.list-item-button:hover {
+  background-color: transparent !important;
+}
+
+.hoverable-item:hover {
+  color: #0d6efd;
+  background-color: #cae2ff !important;
+}
+
+.list-item-button.Mui-selected {
+  background-color: #1976d2;
+  color: white;
+}
+
+.list-item-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 1000;
+}
+
+.navbar-dropdown {
+  div {
+    padding: 0;
+    border: none !important;
+  }
+}
+
+.group-item {
+  border-right: 4px solid transparent !important;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  &:hover {
+    border-color: #0d6efd !important;
+    background-color: transparent !important;
+  }
+}
+
+.selectDropdown .css-qiwgdb.css-qiwgdb.css-qiwgdb {
+  padding: 10px 32px !important;
+}
+
+.buttonWrapper button:hover{
+  background-color:#cae2ff !important;
+}
+.backButton button:hover{
+  background-color:#cae2ff !important
+}
+
+.inputFieldWrapper{
+  div{
+      label{
+          line-height: 14px !important;
+      }
+      div{
+          input{
+              padding: 10.5px 14px !important;
+          }
+      }
+  }
+}
+
+
+.Toastify__toast--success {
+  background-color: green;
+}
+
+.Toastify__toast--error {
+  background-color: red;
+}
+.pageSize{
+  div{
+      div{
+        div{
+          padding:6px 40px !important;
+        }
+      }
+  }
+}
+
+.selectDropdown .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 10px 32px !important;
+}
+
+.css-j204z7-MuiFormControlLabel-root {
+  // margin:0px !important;
+  height:30px !important;
+  margin-right: 0px !important;
+
+}
+.css-1wnwmlk-MuiCircularProgress-root{
+  height:20px !important;
+  width: 20px !important;
+}
+
+
+

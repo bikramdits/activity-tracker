@@ -1,0 +1,87 @@
+{
+  "name": "timesheet",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/timesheet/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/timesheet",
+        "index": "apps/timesheet/src/index.html",
+        "baseHref": "/",
+        "main": "apps/timesheet/src/main.ts",
+        "tsConfig": "apps/timesheet/tsconfig.app.json",
+        "assets": [
+          "apps/timesheet/src/favicon.ico",
+          "apps/timesheet/src/assets"
+        ],
+        "styles": ["apps/timesheet/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "apps/timesheet/webpack.config.ts"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/timesheet/src/environments/environment.ts",
+              "with": "apps/timesheet/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "webpackConfig": "apps/timesheet/webpack.config.prod.ts"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/react:module-federation-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "timesheet:build",
+        "hmr": false,
+        "port": 4206
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "timesheet:build:development"
+        },
+        "production": {
+          "buildTarget": "timesheet:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "timesheet:build",
+        "watch": false,
+        "port": 4206
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "timesheet:build:development"
+        },
+        "production": {
+          "buildTarget": "timesheet:build:production"
+        }
+      }
+    }
+  }
+}

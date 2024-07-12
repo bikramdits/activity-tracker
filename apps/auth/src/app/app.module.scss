@@ -1,0 +1,27 @@
+/* Your styles goes here. */
+.list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .list-item-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    transition: background-color 0.3s, border-right 0.3s;
+  }
+  
+  .list-item-button:hover {
+    background-color: #1976d2; /* Blue background on hover */
+    border-right: 4px solid #1976d2; /* Blue right border on hover */
+  }
+  
+  .list-item-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
